@@ -15,7 +15,7 @@ function [pr,Q,phi,y,basis] = buildSOSTrigDecompPrimal(pr,expr,cs,basis)
         [~,m,coeff] = pr.newFreeTrigPoly(cs,basis,size(cs,1));
 
         phi = spotsosprog.buildGramBasis(expr+m.'*(c.^2+s.^2-1),...
-                                         [decvar;coeff(:)]);
+                                         [decvar;coeff(:)],[]);
         phi = spot_trigPolySpan(phi,cs);
     else
         phi = spotsosprog.buildGramBasis(expr,decvar);

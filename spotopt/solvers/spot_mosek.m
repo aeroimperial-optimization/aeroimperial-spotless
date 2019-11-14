@@ -118,9 +118,9 @@ function [x,y,z,info] = spot_mosek(A,b,c,K,options)
     end
     
     if options.verbose
-        cmd = 'minimize info';
+        cmd = 'minimize info param';
     else
-        cmd = 'minimize echo(0)';
+        cmd = 'minimize echo(0) param';
     end
     
     if isfield(options.solver_options,'mosek')

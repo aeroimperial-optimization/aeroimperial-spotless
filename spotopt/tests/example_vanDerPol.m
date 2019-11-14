@@ -20,4 +20,4 @@ pr = pr.withSOS(l*Vdot + (V-r)*(x'*x)^d);
 
 opt = spot_sdp_default_options();
 opt.verbose = 1;
-sol = pr.minimize(-r,@spot_mosek,opt);
+sol = pr.minimize(-r,@spot_cdcs,opt);
